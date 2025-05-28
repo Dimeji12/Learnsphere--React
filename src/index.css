@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 220 15% 25%; /* Dark Cool Gray */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    --primary: 200 80% 50%; /* Bright, Engaging Blue */
+    --primary-foreground: 0 0% 98%; /* White */
+
+    --secondary: 150 60% 45%; /* Calming Green */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 20% 96%; /* Very Light Cool Gray */
+    --muted-foreground: 220 10% 45%; 
+
+    --accent: 45 90% 55%; /* Warm Yellow/Orange for CTAs */
+    --accent-foreground: 220 15% 15%; /* Dark for contrast on accent */
+
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 90%; /* Lighter border */
+    --input: 220 15% 90%;
+    --ring: 200 80% 55%; /* Primary color for focus rings */
+
+    --radius: 0.75rem; /* Slightly larger radius for a softer feel */
+  }
+
+  .dark {
+    --background: 220 15% 10%; /* Very Dark Blue-Gray */
+    --foreground: 0 0% 95%;
+
+    --card: 220 15% 15%; 
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 200 70% 60%; 
+    --primary-foreground: 220 10% 10%;
+
+    --secondary: 150 50% 55%;
+    --secondary-foreground: 220 10% 10%;
+
+    --muted: 220 10% 20%; 
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 45 80% 60%;
+    --accent-foreground: 220 15% 10%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 10% 25%;
+    --input: 220 10% 25%;
+    --ring: 200 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lexend', sans-serif; /* More modern, friendly heading font */
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+.container-app {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* General Card Style for Courses etc. */
+.course-card {
+  @apply bg-card rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-[1.02];
+}
+
+.course-card-image-wrapper {
+  @apply aspect-video overflow-hidden;
+}
+
+.course-card-image {
+  @apply w-full h-full object-cover transition-transform duration-300 group-hover:scale-105;
+}
+
+.glassmorphic-nav {
+  @apply bg-background/80 backdrop-blur-lg;
+}
+
+.section-padding {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
+.hero-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
